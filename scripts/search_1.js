@@ -32,5 +32,9 @@ function listKeyWord(data) {
   return all_lists
 }
 
+function search(data,valeur){
+  const result = data.filter(data => data.includes(strUcFirst(valeur)));
+  return result
+}
 
 

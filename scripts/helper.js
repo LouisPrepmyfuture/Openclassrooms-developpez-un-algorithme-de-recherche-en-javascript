@@ -9,3 +9,15 @@ function sup_duplicate(list){
   }
   return list_sort
 }
+
+function strUcFirst(a){
+  return (a+'').charAt(0).toUpperCase()+a.substr(1);
+}
+
+
+function sup_child(parent){
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
