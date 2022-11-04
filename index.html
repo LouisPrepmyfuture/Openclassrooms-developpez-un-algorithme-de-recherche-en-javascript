@@ -16,7 +16,7 @@
     <link href="asset/style.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <body">
+  <body class="body">
 
     <div class="container">
       <header class="blog-header py-3">
@@ -32,52 +32,46 @@
       
 
     <main role="main" class="container">
-      <form>
+      <div id="GFG"></div>
         <div class="form-control">
-          <input type="text" class="w-100 h-100" id="primarySearch" lang="fr">
+          <input id="search_input" type="search" class="w-100 h-100"  lang="fr">
         </div>
-      </form>
 
-      <div class="d-flex align-items-center my-4">
-        <button type="button" class="btn btn-primary btn-sm mr-4">Small button</button>
-        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <div id="list_search_tag" class="d-flex align-items-center my-4">
       </div>
 
       <div class="d-flex align-items-center my-4">
-        <div id="content_ingredients" class="dropdown mr-3">
+
+        <div id="container_ingredient" class="dropdown mr-3">
           <div class="d-flex align-items-center btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <p class="m-0">Ingredients</p>
-            <input class="bg-primary" type="text" name="search-ingredient" id="search-ingredient" style="display:none;"/>
+            <input class="bg-primary" type="text" name="search-ingredient" id="search_ingredient" style="display:none;"/>
           </div>
-          <div class="dropdown-menu" id="content_list_ingredients" aria-labelledby="dropdownMenuButton" style="display:none;">
-          </div>
+          <div class="dropdown-menu" id="content_list_ingredient" aria-labelledby="dropdownMenuButton" style="display:none;"> </div>
         </div>
 
-        <div id="content_appliances" class="dropdown mr-3">
-          <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Appareils
-          </button>
-          <div class="dropdown-menu" aria-labelledby="Appareils">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+        <div id="container_appliance" class="dropdown mr-3">
+          <div class="d-flex align-items-center btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="m-0">appliances</p>
+            <input class="bg-secondary" type="text" name="search-appliances" id="search_appliance" style="display:none;"/>
           </div>
+          <div class="dropdown-menu" id="content_list_appliance" aria-labelledby="dropdownMenuButton" style="display:none;"> </div>
         </div>
-        <div id="content_utensil" class="dropdown">
-          <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Ustensiles
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+
+        <div id="container_ustensil" class="dropdown mr-3">
+          <div class="d-flex align-items-center btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="m-0">ustensils</p>
+            <input class="bg-secondary" type="text" name="search-ustensil" id="search_ustensil" style="display:none;"/>
           </div>
+          <div class="dropdown-menu" id="content_list_ustensil" aria-labelledby="dropdownMenuButton" style="display:none;"> </div>
         </div>
+
+
+        </div>
+        
       </div>
 
-      <div id="content_card" class="d-flex justify-content-between align-items-center">
-
-      
+      <div id="content_card" class="card-group">
       </div>
     </main><!-- /.container -->
 

@@ -1,28 +1,32 @@
-function create_dropdoown(array, element){
-  let content_list = document.querySelector( '#content_list_ingredients' )
-  let input = document.querySelector( '#search-ingredient' )
+function create_dropdoown(array, element, type){
   let li 
-
+  
   for(let i = 0 ;i < array.length; i++){
     li = document.createElement('li')
-    li.classList.add("dropdown-item"); 
+    li.classList.add("dropdown-item")
+    li.setAttribute("class", type)
     li.textContent = array[i]
-    content_list.appendChild(li)
+    
+    element.content_list.appendChild(li)
   }
 
+  let list_tag = document.querySelectorAll("."+type)
+  for(let j = 0; j < list_tag.length; j++ ){
+    list_tag[j].addEventListener("click", function(){
+      create_btn_search(list_tag[j].textContent, type)
+    })
+  }
 
-  element.addEventListener('click', ()=>{
-    if(content_list.style.display === "none" ){
-      content_list.style.display = "block"; 
-      input.style.display = "block"
+  element.container.addEventListener('click', ()=>{
+    if(element.content_list.style.display === "none" ){
+      element.content_list.style.display = "block"; 
+      element.input.style.display = "block"
     }
   })
 }
 
 
-function create_cards(data){
-
-  content_card = document.querySelector("#content_card")
+function create_cards(data, content_card){
 
   let card = document.createElement('div') 
   let img = document.createElement('img') 
@@ -36,10 +40,12 @@ function create_cards(data){
   let li 
   let b
 
-  card.setAttribute("style","width: 380px;")
+  card.setAttribute("style","min-width: 350px;max-width: 350px;")
   img.setAttribute("src","https://picsum.photos/380/178")
   card_header.setAttribute("class","d-flex justify-content-between align-items-center");
   content_description.setAttribute("class","d-flex justify-content-between");
+  description.setAttribute("class","col-6");
+  ul.setAttribute("class","p-0 col-6" )
 
   card.classList.add("card");
   img.classList.add("card-img-top");
@@ -51,25 +57,24 @@ function create_cards(data){
 
   ul.classList.add("ul");
 
-  
-  for(let i = 0; data.length > i ; i++){
-    title.textContent = data[i].name;
-    time.textContent = data[i].time;
-    description.textContent = data[i].description
 
-    for(let j = 0; data[i].ingredients.length > j ; j++ ) {
+    title.textContent = data.name;
+    time.textContent = data.time;
+    description.textContent = data.description.substring(1,100);
+
+    for(let j = 0; data.ingredients.length > j ; j++ ) {
       li = document.createElement("li")
       b = document.createElement("b")
-      b.textContent = data[i].ingredients[j].ingredient 
-      if(data[i].ingredients[j].quantity ){
-        li.textContent += " "+data[i].ingredients[j].quantity
-        if( data[i].ingredients[j].unit ){
-          li.textContent += data[i].ingredients[j].unit
+      b.textContent = data.ingredients[j].ingredient 
+      if(data.ingredients[j].quantity ){
+        li.textContent += " "+data.ingredients[j].quantity
+        if( data.ingredients[j].unit ){
+          li.textContent += data.ingredients[j].unit
         }
       }
       li.prepend(b)
       ul.appendChild(li);
-    }
+    
 
     content_card.appendChild(card)
     card.appendChild(img)
@@ -80,7 +85,56 @@ function create_cards(data){
     card_body.appendChild(content_description)
     content_description.appendChild(ul)
     content_description.appendChild(description)
-
     
+  }
+}
+
+function create_btn_search(name,type_tag){
+  let verif = document.querySelectorAll('.tag_'+type_tag) 
+  let exsiste =  false;
+  // verifi qu'il est pas deja dans la list 
+  if(verif.length > 0){
+    for(let i = 0; verif.length > i ; i++){
+      if(verif[i].textContent === name){
+        exsiste = true;
+      }
+    }
+  }
+  
+  // si il est pas dans la list le crée un bouton tag 
+  if(exsiste === false){
+
+    content_search = document.querySelector('#list_search_tag') 
+    
+    let btn = document.createElement("button")
+    btn.setAttribute("class", "btn btn-primary mr-2 tag_" + type_tag)
+    btn.textContent = name;
+    
+    btn.addEventListener("click", function(){
+      btn.remove();
+      sup_child(content_card)
+      all_search(recipes, input_search, content_card)
+    })
+
+    content_search.appendChild(btn);
+  }
+ 
+}
+
+
+function create_list_cards(resulta, content_resulta){
+  
+  sup_child(content_card)
+
+  if(resulta.length === 0 ){
+    const message = document.createElement("p") 
+    message.setAttribute("class","mx-auto mt-5 h3 fw-bold")
+    message.textContent = "Il n'y a pas de resulta pour cette recherche"
+    content_resulta.appendChild(message)
+  }else{
+    for(let i = 0; i < resulta.length; i++){
+      create_cards(resulta[i],content_resulta)
+    }
+    content_resulta
   }
 }
