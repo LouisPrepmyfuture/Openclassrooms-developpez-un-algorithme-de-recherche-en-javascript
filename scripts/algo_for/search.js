@@ -33,9 +33,14 @@ function listKeyWord(data) {
   return all_lists
 }
 
-function search(data,valeur){
-  const result = data.filter(data => data.includes(valeur.toLowerCase()));
-  return result
+function filter_tag(data,valeur){
+  let resulta = []
+  for(let i = 0; data.length > i; i++){
+    if(data[i].includes(valeur.toLowerCase())){    
+      resulta.push(data[i])
+    }
+  }
+  return resulta
 }
 
 function searchIngredient(data,list_tag_ingredient){
@@ -155,8 +160,8 @@ function all_search(data, input_search, content_resulta){
   let list_tag_ingredient=[]
   let list_tag_ustensil=[]
   let list_tag_appliance=[]
+  
   // recuperation des tag active
-
    list_tag_ingredient = arrayPushString(".tag_ingredient")
    list_tag_ustensil = arrayPushString(".tag_ustensil")
    list_tag_appliance = arrayPushString(".tag_appliance")
@@ -168,9 +173,10 @@ function all_search(data, input_search, content_resulta){
   
   resulta = searchUstensible(resulta, list_tag_ustensil)
 	resulta = searchAppareil(resulta, list_tag_appliance)
+
   //filtre les tags qui reste dans la data restante 
   let list_tag = listKeyWord(resulta)
-  // console.log(domDropdown.ustensil);
+
   // mise a jour des tags 
   actualise_tag(list_tag.ingredient, domDropdown.ingredient,"ingredient")
   actualise_tag(list_tag.ustensil, domDropdown.ustensil,"ustensil")
@@ -179,5 +185,4 @@ function all_search(data, input_search, content_resulta){
 
   create_list_cards(resulta, content_resulta)
 
-  nbCards()
 }
