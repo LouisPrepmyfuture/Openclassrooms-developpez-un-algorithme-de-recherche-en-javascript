@@ -52,7 +52,7 @@ search_input.addEventListener('input', (event) => {
   if(event.target.value.length >= 3){
 
     sup_child(content_card)
-    all_search(recipes, input_search, content_card)
+    searchRecipes(recipes, input_search, content_card)
 
   }else{
 
@@ -68,13 +68,13 @@ let list_search_tag = document.querySelector('#list_search_tag')
 // Evenemt add DOMNodeInserted buttom tag
 list_search_tag.addEventListener("DOMNodeInserted", ()=>{
    sup_child(content_card)
-   all_search(recipes, input_search, content_card)
+   searchRecipes(recipes, input_search, content_card)
  })
 
 // Si buttom tag Evenemt remove DOMNodeRemoved buttom tag
 list_search_tag.addEventListener("DOMNodeRemoved", ()=>{
   sup_child(content_card)
-  all_search(recipes, input_search, content_card)
+  searchRecipes(recipes, input_search, content_card)
 })
 
 

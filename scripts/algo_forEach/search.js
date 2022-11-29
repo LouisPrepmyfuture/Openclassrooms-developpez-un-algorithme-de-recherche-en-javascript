@@ -111,7 +111,7 @@ function notInputInIngredients(mainInput, recipe) {
 }
 
 
-function all_search(data, input_search, content_resulta){
+function searchRecipes(data, input_search, content_resulta){
 
   // recuperation des tag active
 

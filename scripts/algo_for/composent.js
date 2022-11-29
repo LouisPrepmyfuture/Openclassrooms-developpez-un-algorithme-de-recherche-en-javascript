@@ -118,7 +118,7 @@ function create_btn_search(name,type_tag){
     btn.addEventListener("click", function(){
       btn.remove();
       sup_child(content_card)
-      all_search(recipes, input_search, content_card)
+      searchRecipes(recipes, input_search, content_card)
     })
 
     content_search.appendChild(btn);

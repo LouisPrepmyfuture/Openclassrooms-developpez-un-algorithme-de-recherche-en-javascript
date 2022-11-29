@@ -155,7 +155,7 @@ function inputSearch(data, search_input){
   return resulta
 }
 
-function all_search(data, input_search, content_resulta){
+function searchRecipes(data, input_search, content_resulta){
 
   let list_tag_ingredient=[]
   let list_tag_ustensil=[]
