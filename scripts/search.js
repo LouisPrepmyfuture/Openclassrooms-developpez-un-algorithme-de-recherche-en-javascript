@@ -50,7 +50,7 @@ function filter_tag(tags,valeur){
     // TODO forcer la comparaison sans tenir compte de la casse
     // on vérifie si le texte est présent dans la description ou 1 ingrédient ou le nom
       
-    if (input_search1(recipe,input_value) === false) {
+    if (input_search(recipe,input_value) === false) {
       return false;
     } 
    
@@ -80,15 +80,29 @@ function filter_tag(tags,valeur){
   });
 }
 
-function input_search(recipe,input_value){
-  if( recipe.name.toLowerCase().indexOf(input_value) === -1
-  && recipe.description.toLowerCase().indexOf(input_value) === -1
-  && notInputInIngredients(input_value, recipe)
-  ){
-    return false
-  }else{
-    return true;
+// cherche un mot dans une data(ingredient description et name)
+function input_search(recipe, input_value){
+  if(input_value === ""){
+    return true
   }
+  // search in ingredient 
+  let ingredients = recipe.ingredients
+  for(let i = 0; ingredients.length > i; i++){
+    let ingredient = ingredients[i]
+   if(ingredient.ingredient === input_value){
+    return true
+   }
+  }
+  // search in description
+  if(recipe.name.toLowerCase().search(input_value) > -1 ){
+    console.log("tresdt")
+    return true
+  }
+	// search in title
+  if(recipe.description.toLowerCase().search(input_value) > -1 ){
+    return true
+  } 
+   return false
 }
 
 function notInUstensils(list_tag_ustensil, recipe) {
