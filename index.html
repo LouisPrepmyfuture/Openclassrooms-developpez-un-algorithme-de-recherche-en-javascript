@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
     <title>Blog Template for Bootstrap</title>
 
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="asset/style.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <body>
+  <body class="body">
 
     <div class="container">
       <header class="blog-header py-3">
@@ -27,80 +27,56 @@
           </svg>
         </div>
       </header>
-
+    </div>
       
       
 
     <main role="main" class="container">
-      <form>
-        <div class="form-control">
-          <input type="text" class="w-100 h-100" id="primarySearch" lang="fr">
-        </div>
-      </form>
-
-      <div class="d-flex align-items-center my-4">
-        <button type="button" class="btn btn-primary btn-sm mr-4">Small button</button>
-        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <div class="position-relative">
+          <input id="search_input" type="search" class="w-100"  lang="fr" placeholder="Rechercher une recette">
+          <svg class="svg-input" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.4167 20.6667H21.9683L21.455 20.1717C23.2517 18.0817 24.3333 15.3683 24.3333 12.4167C24.3333 5.835 18.9983 0.5 12.4167 0.5C5.835 0.5 0.5 5.835 0.5 12.4167C0.5 18.9983 5.835 24.3333 12.4167 24.3333C15.3683 24.3333 18.0817 23.2517 20.1717 21.455L20.6667 21.9683V23.4167L29.8333 32.565L32.565 29.8333L23.4167 20.6667ZM12.4167 20.6667C7.85167 20.6667 4.16667 16.9817 4.16667 12.4167C4.16667 7.85167 7.85167 4.16667 12.4167 4.16667C16.9817 4.16667 20.6667 7.85167 20.6667 12.4167C20.6667 16.9817 16.9817 20.6667 12.4167 20.6667Z" fill="black"/>
+          </svg>
       </div>
 
-      <div class="d-flex align-items-center my-4">
-        <div id="content_ingredients" class="dropdown mr-3">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Ingredients
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-        <div id="content_appliances" class="dropdown mr-3">
-          <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Appareils
-          </button>
-          <div class="dropdown-menu" aria-labelledby="Appareils">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-        <div id="content_utensil" class="dropdown">
-          <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Ustensiles
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
+      <div id="list_search_tag" class="d-flex align-items-center my-4">
       </div>
 
-      <div id="content_search" class="d-flex justify-content-between align-items-center">
-        <div class="card" style="width: 380px;">
-          <img class="card-img-top" src="https://picsum.photos/380/178" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="d-flex align-items-center my">
+
+        <div id="container_ingredient" class="dropdown mr-3 dropdown-content">
+          <div class="d-flex align-items-center justify-content-between btn btn-primary dropdown-toggle w-100" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="m-0">Ingredients</p>
+            <input class="bg-primary" type="text" name="search-ingredient" id="search_ingredient" placeholder="Rechercher un ingédient" />
           </div>
+          <div class="dropdown-menu bg-primary" id="content_list_ingredient" aria-labelledby="dropdownMenuButton"  >
+           </div>
         </div>
-        <div class="card" style="width: 380px;">
-          <img class="card-img-top" src="https://picsum.photos/380/178" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+        <div id="container_appliance" class="dropdown mr-3 dropdown-content">
+          <div class="d-flex align-items-center justify-content-between btn btn-success dropdown-toggle w-100" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="m-0">appliances</p>
+            <input class="bg-success" type="text" name="search-appliances" id="search_appliance"
+            placeholder="Rechercher un appliances"/>
           </div>
+          <div class="dropdown-menu bg-success" id="content_list_appliance" aria-labelledby="dropdownMenuButton"> </div>
         </div>
-        <div class="card" style="width: 380px;">
-          <img class="card-img-top" src="https://picsum.photos/380/178" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+        <div id="container_ustensil" class="dropdown mr-3 dropdown-content">
+          <div class="d-flex align-items-center justify-content-between btn btn-danger dropdown-toggle w-100" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="m-0">ustensils</p>
+            <input class="bg--danger" type="text" name="search-ustensil" id="search_ustensil"
+            placeholder="Rechercher un ustensils" />
           </div>
+          <div class="dropdown-menu bg-danger" id="content_list_ustensil" aria-labelledby="dropdownMenuButton"> </div>
         </div>
+
+
+        </div>
+        
+      </div>
+
+      <div id="content_card" class="content-card">
       </div>
     </main><!-- /.container -->
 
@@ -108,10 +84,10 @@
 
     </footer>
   </body>
-  <script src="data/data.js"></script>
-  <script src="scripts/search_1.js"></script>
+
+  <script src="scripts/data/data.js"></script>
   <script src="scripts/helper.js"></script>
-  <script src="scripts/composent.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/composent.js"></script> 
   <script src="scripts/main.js"></script>
 </html>
-Ê-
