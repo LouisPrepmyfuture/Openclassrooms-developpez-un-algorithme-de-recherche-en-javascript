@@ -1,6 +1,8 @@
   const input_search = document.querySelector("#search_input")
   const list_all_tag = listKeyWord(recipes)
   const content_card = document.querySelector("#content_card")
+  const arrows = document.querySelectorAll('dropdown-toggle')
+  let arrow = ""
   
 // CREATION DOM
   
@@ -48,19 +50,12 @@ domDropdown.appliance.container.addEventListener("input", ()=>{
 // Evement main input search  
 search_input.addEventListener('input', (event) => {
   event.preventDefault
-
   if(event.target.value.length >= 3){
-
     sup_child(content_card)
     searchRecipes(recipes, input_search, content_card)
-
   }else{
-
     create_list_cards(recipes, content_card);
-    nbCards() 
-
   }
-
 })
 
 let list_search_tag = document.querySelector('#list_search_tag')

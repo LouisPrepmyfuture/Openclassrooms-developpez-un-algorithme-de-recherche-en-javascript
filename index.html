@@ -27,44 +27,48 @@
           </svg>
         </div>
       </header>
-
+    </div>
       
       
 
     <main role="main" class="container">
-      <div id="GFG"></div>
-        <div class="form-control">
-          <input id="search_input" type="search" class="w-100 h-100"  lang="fr">
-        </div>
+      <div class="position-relative">
+          <input id="search_input" type="search" class="w-100"  lang="fr" placeholder="Rechercher une recette">
+          <svg class="svg-input" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.4167 20.6667H21.9683L21.455 20.1717C23.2517 18.0817 24.3333 15.3683 24.3333 12.4167C24.3333 5.835 18.9983 0.5 12.4167 0.5C5.835 0.5 0.5 5.835 0.5 12.4167C0.5 18.9983 5.835 24.3333 12.4167 24.3333C15.3683 24.3333 18.0817 23.2517 20.1717 21.455L20.6667 21.9683V23.4167L29.8333 32.565L32.565 29.8333L23.4167 20.6667ZM12.4167 20.6667C7.85167 20.6667 4.16667 16.9817 4.16667 12.4167C4.16667 7.85167 7.85167 4.16667 12.4167 4.16667C16.9817 4.16667 20.6667 7.85167 20.6667 12.4167C20.6667 16.9817 16.9817 20.6667 12.4167 20.6667Z" fill="black"/>
+          </svg>
+      </div>
 
       <div id="list_search_tag" class="d-flex align-items-center my-4">
       </div>
 
-      <div class="d-flex align-items-center my-4">
+      <div class="d-flex align-items-center my">
 
-        <div id="container_ingredient" class="dropdown mr-3">
-          <div class="d-flex align-items-center btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div id="container_ingredient" class="dropdown mr-3 dropdown-content">
+          <div class="d-flex align-items-center justify-content-between btn btn-primary dropdown-toggle w-100" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <p class="m-0">Ingredients</p>
-            <input class="bg-primary" type="text" name="search-ingredient" id="search_ingredient" style="display:none;"/>
+            <input class="bg-primary" type="text" name="search-ingredient" id="search_ingredient" placeholder="Rechercher un ingédient" />
           </div>
-          <div class="dropdown-menu bg-primary" id="content_list_ingredient" aria-labelledby="dropdownMenuButton" style="display:none;">
+          <div class="dropdown-menu bg-primary" id="content_list_ingredient" aria-labelledby="dropdownMenuButton"  >
            </div>
         </div>
 
-        <div id="container_appliance" class="dropdown mr-3">
-          <div class="d-flex align-items-center btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div id="container_appliance" class="dropdown mr-3 dropdown-content">
+          <div class="d-flex align-items-center justify-content-between btn btn-success dropdown-toggle w-100" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <p class="m-0">appliances</p>
-            <input class="bg-success" type="text" name="search-appliances" id="search_appliance" style="display:none;"/>
+            <input class="bg-success" type="text" name="search-appliances" id="search_appliance"
+            placeholder="Rechercher un appliances"/>
           </div>
-          <div class="dropdown-menu bg-success" id="content_list_appliance" aria-labelledby="dropdownMenuButton" style="display:none;"> </div>
+          <div class="dropdown-menu bg-success" id="content_list_appliance" aria-labelledby="dropdownMenuButton"> </div>
         </div>
 
-        <div id="container_ustensil" class="dropdown mr-3">
-          <div class="d-flex align-items-center btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div id="container_ustensil" class="dropdown mr-3 dropdown-content">
+          <div class="d-flex align-items-center justify-content-between btn btn-danger dropdown-toggle w-100" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <p class="m-0">ustensils</p>
-            <input class="bg--danger" type="text" name="search-ustensil" id="search_ustensil" style="display:none;"/>
+            <input class="bg--danger" type="text" name="search-ustensil" id="search_ustensil"
+            placeholder="Rechercher un ustensils" />
           </div>
-          <div class="dropdown-menu bg-danger" id="content_list_ustensil" aria-labelledby="dropdownMenuButton" style="display:none;"> </div>
+          <div class="dropdown-menu bg-danger" id="content_list_ustensil" aria-labelledby="dropdownMenuButton"> </div>
         </div>
 
 
@@ -72,7 +76,7 @@
         
       </div>
 
-      <div id="content_card" class="card-group">
+      <div id="content_card" class="content-card">
       </div>
     </main><!-- /.container -->
 
@@ -82,21 +86,8 @@
   </body>
 
   <script src="scripts/data/data.js"></script>
-
-  <script src="scripts/algo_for/helper.js"></script>
-  <script src="scripts/algo_for/search.js"></script>
-  <script src="scripts/algo_for/composent.js"></script>
-
-  <!-- <script src="scripts/algo_forEach/helper.js"></script>
-  <script src="scripts/algo_forEach/search.js"></script>
-  <script src="scripts/algo_forEach/composent.js"></script> -->
-
-
+  <script src="scripts/helper.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/composent.js"></script> 
   <script src="scripts/main.js"></script>
- 
-
 </html>
-<script>
-
-
-</script>

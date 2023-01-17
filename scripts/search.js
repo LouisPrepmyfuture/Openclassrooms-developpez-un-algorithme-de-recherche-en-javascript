@@ -30,12 +30,10 @@ function listKeyWord(recipes) {
     return all_lists
 }
 
-
 function filter_tag(tags,valeur){
   let resulta = []
   return resulta = tags.filter(tag => tag.includes(valeur.toLowerCase()))
 }
-
 
 /**
  * 
@@ -52,12 +50,7 @@ function filter_tag(tags,valeur){
     // TODO forcer la comparaison sans tenir compte de la casse
     // on vérifie si le texte est présent dans la description ou 1 ingrédient ou le nom
       
-    if (
-      recipe.name.toLowerCase().indexOf(input_value) === -1
-      && recipe.description.toLowerCase().indexOf(input_value) === -1
-      && notInputInIngredients(input_value, recipe)
-    ) {
-     
+    if (input_search1(recipe,input_value) === false) {
       return false;
     } 
    
@@ -82,12 +75,21 @@ function filter_tag(tags,valeur){
         return false 
       }
     }   
-
     // garder item si on retourne true
     return true;
   });
 }
 
+function input_search(recipe,input_value){
+  if( recipe.name.toLowerCase().indexOf(input_value) === -1
+  && recipe.description.toLowerCase().indexOf(input_value) === -1
+  && notInputInIngredients(input_value, recipe)
+  ){
+    return false
+  }else{
+    return true;
+  }
+}
 
 function notInUstensils(list_tag_ustensil, recipe) {
   let resulta = []
@@ -112,7 +114,6 @@ function notInputInIngredients(mainInput, recipe) {
 
 
 function searchRecipes(data, input_search, content_resulta){
-
   // recuperation des tag active
 
    let list_tag_ingredient = arrayPushString(".tag_ingredient")
