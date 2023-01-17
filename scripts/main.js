@@ -71,5 +71,3 @@ list_search_tag.addEventListener("DOMNodeRemoved", ()=>{
   sup_child(content_card)
   searchRecipes(recipes, input_search, content_card)
 })
-
-
