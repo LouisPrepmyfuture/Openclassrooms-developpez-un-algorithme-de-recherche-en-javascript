@@ -50,7 +50,7 @@ function filter_tag(tags,valeur){
     // TODO forcer la comparaison sans tenir compte de la casse
     // on vérifie si le texte est présent dans la description ou 1 ingrédient ou le nom
       
-    if (input_search1(recipe,input_value) === false) {
+    if (input_main(recipe,input_value) === false) {
       return false;
     } 
    
@@ -80,7 +80,7 @@ function filter_tag(tags,valeur){
   });
 }
 
-function input_search(recipe,input_value){
+function input_main(recipe,input_value){
   if( recipe.name.toLowerCase().indexOf(input_value) === -1
   && recipe.description.toLowerCase().indexOf(input_value) === -1
   && notInputInIngredients(input_value, recipe)

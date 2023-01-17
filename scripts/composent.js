@@ -114,6 +114,7 @@ function create_btn_search(name,type_tag){
     let btn = document.createElement("button")
     let icon = document.createElement("i")
 
+    icon.setAttribute("class", "far fa-times-circle pr-2")
     btn.setAttribute("class", "btn btn-primary mr-2 tag_" + type_tag)
     btn.textContent = name;
   
@@ -124,7 +125,8 @@ function create_btn_search(name,type_tag){
       searchRecipes(recipes, input_search, content_card)
     })
     let open = document.querySelector('.open') 
-    open.classList.remove("open");
+    open.classList.remove("open")
+		btn.prepend(icon)
     content_search.appendChild(btn);
   }
  
