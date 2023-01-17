@@ -16,8 +16,6 @@ function sup_duplicate(list){
   return list_sort
 }
 
-
-
 function sup_child(parent){
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
@@ -34,7 +32,7 @@ function arrayPushString(tag){
   let tag_array = []
   let list_tag = document.querySelectorAll(tag)
   list_tag.forEach(tag => {
-    tag_array.push(tag.innerHTML)
+    tag_array.push(tag.textContent)
   });
   return tag_array
 }
