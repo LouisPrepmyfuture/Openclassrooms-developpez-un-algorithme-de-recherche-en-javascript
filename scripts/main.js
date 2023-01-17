@@ -24,8 +24,6 @@ const domDropdown = {
   }
 }
 
-
-
 create_dropdoown(list_all_tag.ingredient , domDropdown.ingredient,"ingredient")
 create_dropdoown(list_all_tag.ustensil, domDropdown.ustensil,"ustensil")
 create_dropdoown(list_all_tag.appliance,  domDropdown.appliance,"appliance")
@@ -70,14 +68,4 @@ list_search_tag.addEventListener("DOMNodeInserted", ()=>{
 list_search_tag.addEventListener("DOMNodeRemoved", ()=>{
   sup_child(content_card)
   searchRecipes(recipes, input_search, content_card)
-<<<<<<< HEAD
 })
-=======
-})
-
-document.querySelector(".body").addEventListener("click", () => {
-	console.log("coco")
-})
-
-
->>>>>>> algo_forEach

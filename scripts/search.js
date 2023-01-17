@@ -12,17 +12,6 @@ function listKeyWord(data) {
     for(let j = 0; j < total; j++){
       list_ingredients.push(data[i].ingredients[j].ingredient)
     }
-
-<<<<<<< HEAD
-    // list ustensible
-    for(let l = 0; l < data.length; l++){
-      for(let lj = 0; lj < data[l].ustensils.length; lj++){
-        list_utensils.push(data[l].ustensils[lj])
-      }
-    }
-    // list appliance
-    list_appliances.push(data[i].appliance)
-=======
     return all_lists
 }
 
@@ -84,22 +73,11 @@ function input_main(recipe,input_value){
     return false
   }else{
     return true;
->>>>>>> algo_forEach
-  }
-
-   all_lists = {
-    ingredient: sup_duplicate(list_ingredients),
-    ustensils: sup_duplicate(list_utensils),
-    appliances: sup_duplicate(list_appliances)
-   }
-
-  return all_lists
+	}
 }
 
+searchRecipes(recipes, input_search, content_card)
 
-
-<<<<<<< HEAD
-=======
    let list_tag_ingredient = arrayPushString(".tag_ingredient")
    let list_tag_ustensil = arrayPushString(".tag_ustensil")
    let list_tag_appliance = arrayPushString(".tag_appliance")
@@ -119,4 +97,3 @@ function input_main(recipe,input_value){
 
   create_list_cards(resulta, content_resulta)
 }
->>>>>>> algo_forEach

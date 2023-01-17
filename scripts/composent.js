@@ -114,11 +114,7 @@ function create_btn_search(name,type_tag){
     let btn = document.createElement("button")
     let icon = document.createElement("i")
 		
-<<<<<<< HEAD
-    btn.setAttribute("class", "btn btn-primary mr-2 tag_" + type_tag)
-		icon.setAttribute("class", "far fa-times-circle pr-2")
-		
-=======
+
 		icon.setAttribute("class", "far fa-times-circle pr-2")
 		if(type_tag === "ingredient"){
 			btn.setAttribute("class", "btn btn-primary mr-2 tag_" + type_tag)
@@ -127,7 +123,7 @@ function create_btn_search(name,type_tag){
 		}else{
 			btn.setAttribute("class", "btn btn-danger mr-2 tag_" + type_tag)
 		}
->>>>>>> algo_forEach
+
     
     btn.addEventListener("click", function(){
 			btn.remove();
