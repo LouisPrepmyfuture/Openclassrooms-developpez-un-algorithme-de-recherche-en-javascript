@@ -95,7 +95,6 @@ function input_main(recipe, input_value) {
 	}
 	// search in description
 	if (recipe.name.toLowerCase().search(input_value) > -1) {
-		console.log("tresdt")
 		return true
 	}
 	// search in title
