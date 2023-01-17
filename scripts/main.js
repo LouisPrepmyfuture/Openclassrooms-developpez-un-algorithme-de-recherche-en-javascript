@@ -72,4 +72,8 @@ list_search_tag.addEventListener("DOMNodeRemoved", ()=>{
   searchRecipes(recipes, input_search, content_card)
 })
 
+document.querySelector(".body").addEventListener("click", () => {
+	console.log("coco")
+})
+
 

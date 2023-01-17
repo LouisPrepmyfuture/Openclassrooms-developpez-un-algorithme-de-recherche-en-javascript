@@ -41,7 +41,7 @@ function filter_tag(tags,valeur){
  * @param {Object} filterParams mainInput + tag 1 + tag 2 + tag 3
  * @return {Array} - resultat de data filtré
  */
- function search(recipes, filterParams) {
+ function searchData(recipes, filterParams) {
 
   const { input_value, list_tag_ingredient, list_tag_ustensil, list_tag_appliance} = filterParams;
   
@@ -123,7 +123,7 @@ function searchRecipes(data, input_search, content_resulta){
 
    let filterParams = { input_value, list_tag_ingredient, list_tag_ustensil, list_tag_appliance}
 
-   let resulta =  search(data, filterParams)
+   let resulta =  searchData(data, filterParams)
 
   //filtre les tags qui reste dans la data restante 
   let list_tag = listKeyWord(resulta)
