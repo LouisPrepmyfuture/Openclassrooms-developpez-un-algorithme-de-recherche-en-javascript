@@ -25,13 +25,18 @@ function create_dropdoown(tags, element, type) {
 			open.classList.remove("open");
 		}
 		if (element.container.classList != "open") {
-			const body = document.body;
 			element.container.classList.add("open");
-			body.addEventListener('click', closeDropdownFromOutside);
+			const body = document.body;
+			body.addEventListener('click', () =>{
+				if (element.container.classList.contains('open')) {
+					element.container.classList.remove('open')
+				}
+			})
 		}
+		
 	})
-}
 
+}
 
 
 function create_cards(data, content_card) {
@@ -138,12 +143,6 @@ function create_btn_search(name, type_tag) {
 	}
 
 }
-
-const closeDropdownFromOutside = () => {
-	if (element.container.classList.contains('open')) {
-		element.container.classList.remove('open');
-	}
-};
 
 // Si il est pas dans la list le crée un bouton tag 
 function create_list_cards(resulta, content_resulta) {
