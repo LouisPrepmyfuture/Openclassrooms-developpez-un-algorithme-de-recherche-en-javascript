@@ -8,7 +8,6 @@ function create_dropdoown(tags, element, type){
     element.content_list.appendChild(li)
   });
 
-
   const list_tag = document.querySelectorAll("."+type)
 
   list_tag.forEach(tag => {
@@ -20,7 +19,6 @@ function create_dropdoown(tags, element, type){
  
   element.container.addEventListener('click', (e)=>{
     let open = document.querySelector(".open") 
-    let arrow = document.querySelector(".open") 
     if(open != null){
       open.classList.remove("open");
     }
@@ -30,7 +28,6 @@ function create_dropdoown(tags, element, type){
   })
   
 }
-
 
 function create_cards(data, content_card){
 
@@ -62,7 +59,6 @@ function create_cards(data, content_card){
 
   ul.classList.add("ul");
 
-
     title.textContent = data.name;
     time.textContent = data.time;
     description.textContent = data.description.substring(1,100);
@@ -81,7 +77,6 @@ function create_cards(data, content_card){
     }
     li.prepend(b)
     ul.appendChild(li);
-    
 
     content_card.appendChild(card)
     card.appendChild(img)
