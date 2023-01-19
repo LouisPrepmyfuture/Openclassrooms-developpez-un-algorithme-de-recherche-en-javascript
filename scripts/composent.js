@@ -19,21 +19,21 @@ function create_dropdoown(tags, element, type) {
 	});
 
 	element.container.addEventListener('click', (e) => {
+		e.stopPropagation();
 		let open = document.querySelector(".open")
-		let arrow = document.querySelector(".open")
 		if (open != null) {
 			open.classList.remove("open");
 		}
 		if (element.container.classList != "open") {
 			element.container.classList.add("open");
-			if (element.container.classList != "open") {
-				const body = document.body;
-				element.container.classList.add("open");
-				body.addEventListener('click', closeDropdownFromOutside);
-			}
+			const body = document.body;
+			body.addEventListener('click', () =>{
+				if (element.container.classList.contains('open')) {
+					element.container.classList.remove('open')
+				}
+			})
 		}
 	})
-
 }
 
 
