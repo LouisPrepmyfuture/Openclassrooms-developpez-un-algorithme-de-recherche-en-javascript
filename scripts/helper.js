@@ -16,7 +16,11 @@ function sup_duplicate(list){
   return list_sort
 }
 
-
+const closeDropdownFromOutside = () => {
+  if (element.container.classList.contains('open')) {
+    	element.container.classList.remove('open');
+  }
+};
 
 function sup_child(parent){
   while (parent.firstChild) {
