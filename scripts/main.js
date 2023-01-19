@@ -1,31 +1,31 @@
   const input_search = document.querySelector("#search_input")
-  const list_all_tag = listKeyWord(recipes)
   const content_card = document.querySelector("#content_card")
   const arrows = document.querySelectorAll('dropdown-toggle')
+	
   let arrow = ""
   
-// CREATION DOM
+	// CREATION DOM
   
-const domDropdown = {
-  "ingredient": {
-    "container": document.querySelector('#container_ingredient'),
-    "content_list": document.querySelector('#content_list_ingredient'),
-    "input": document.querySelector('#search_ingredient')
-  },
-  "ustensil": {
-    "container": document.querySelector('#container_ustensil'),
-    "content_list": document.querySelector('#content_list_ustensil'),
-    "input": document.querySelector('#search_ustensil')
-  },
-  "appliance": {
-    "container": document.querySelector('#container_appliance'),
-    "content_list": document.querySelector('#content_list_appliance'),
-    "input": document.querySelector('#search_appliance')
-  }
-}
-
-
-
+	const domDropdown = {
+		"ingredient": {
+			"container": document.querySelector('#container_ingredient'),
+			"content_list": document.querySelector('#content_list_ingredient'),
+			"input": document.querySelector('#search_ingredient')
+		},
+		"ustensil": {
+			"container": document.querySelector('#container_ustensil'),
+			"content_list": document.querySelector('#content_list_ustensil'),
+			"input": document.querySelector('#search_ustensil')
+		},
+		"appliance": {
+			"container": document.querySelector('#container_appliance'),
+			"content_list": document.querySelector('#content_list_appliance'),
+			"input": document.querySelector('#search_appliance')
+		}
+	}
+	
+const list_all_tag = listKeyWord(recipes)
+	
 create_dropdoown(list_all_tag.ingredient , domDropdown.ingredient,"ingredient")
 create_dropdoown(list_all_tag.ustensil, domDropdown.ustensil,"ustensil")
 create_dropdoown(list_all_tag.appliance,  domDropdown.appliance,"appliance")
@@ -71,9 +71,3 @@ list_search_tag.addEventListener("DOMNodeRemoved", ()=>{
   sup_child(content_card)
   searchRecipes(recipes, input_search, content_card)
 })
-
-document.querySelector(".body").addEventListener("click", () => {
-	console.log("coco")
-})
-
-
